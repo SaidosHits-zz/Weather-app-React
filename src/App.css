@@ -54,10 +54,14 @@ body{
 }
 
 .not-found{
-  display: none;
+  display: flex;
   margin-top: 60px;
   flex-direction: column;
   align-items: center;
+}
+.not-found p{
+  font-size: 22px ;
+  margin-top: 30px;
 }
 .not-descraption{
   margin-top: 40px;
