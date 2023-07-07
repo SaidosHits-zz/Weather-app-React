@@ -8,9 +8,9 @@ import rain from "./images/rain.png"
 import snow from "./images/snow.png"
 
 const App = () => {
-  const [imagew, setImages] = useState(Clear);
+  const [imagew, setImages] = useState();
   const cityRef = useRef();
-  const [location, setCity] = useState('france');
+  const [location, setCity] = useState();
   const [weather, setWeather] = useState(null);
   const [notFound, setNotFound] = useState(false);
 
