@@ -8,10 +8,10 @@ import rain from "./images/rain.png"
 import snow from "./images/snow.png"
 
 const App = () => {
-  const [imagew, setImages] = useState();
+  const [imagew, setImages] = useState(Clear);
   const cityRef = useRef();
-  const [location, setCity] = useState();
-  const [weather, setWeather] = useState(null);
+  const [location, setCity] = useState('france');
+  const [weather, setWeather] = useState();
   const [notFound, setNotFound] = useState(false);
 
   const weatherFetch = () => {
@@ -35,24 +35,24 @@ const App = () => {
           setWeather(data);
         }
       })
-  };
 
-  const changeSrc = () => {
+  };
+  const change =()=>{
     if (weather) {
       switch (weather.weather[0].main) {
-        case 'Clear':
+        case "Clear":
           setImages(Clear);
           break;
-        case 'Rain':
+        case "Rain":
           setImages(rain);
           break;
-        case 'Snow':
+        case "Snow":
           setImages(snow);
           break;
-        case 'Clouds':
+        case "Clouds":
           setImages(Cloud);
           break;
-        case 'Haze':
+        case "Haze":
           setImages(mist);
           break;
         default:
@@ -60,7 +60,10 @@ const App = () => {
           break;
       }
     }
-  };
+  }
+  useEffect(()=>{
+    change()
+  },[weather])
 
   return (
     <>
